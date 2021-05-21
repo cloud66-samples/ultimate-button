@@ -1,0 +1,18 @@
+<% unless @is_button %>
+  <%= link_to @link[:url], link_options do %>
+    <%= icon[:name] ? get_icon : '' %>
+    <%= content %>
+  <% end %>
+<% else %>
+  <% if @link %>
+    <%= button_to @link[:url], link_options do %>
+      <%= icon[:name] ? get_icon : '' %>
+      <%= content %>
+    <% end %>
+  <% else %>
+    <%= button_tag get_options do %>
+      <%= icon[:name] ? get_icon : '' %>
+      <%= content %>
+    <% end %>
+  <% end %>
+<% end %>
